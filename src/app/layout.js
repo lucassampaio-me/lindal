@@ -4,6 +4,8 @@ import Footer from '../components/layout/Footer';
 
 import { hankenGrotesk, ranadeVariable } from "./fonts";
 
+import { Analytics } from "@vercel/analytics/react"
+
 export const metadata = {
   title: "Lindal",
   description: "Manutenção e Fabricação de Equipamentos para Cozinha Industrial",
@@ -38,6 +40,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
