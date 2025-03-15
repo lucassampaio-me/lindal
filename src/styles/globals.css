@@ -3,12 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    @apply overflow-x-hidden;
-  }
-
   body {
-    @apply font-sans text-base/normal bg-white text-cinza-4;
+    @apply font-sans text-base/normal bg-white text-cinza-4 overflow-x-hidden;
   }
 }
 

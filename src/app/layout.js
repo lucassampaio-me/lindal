@@ -40,7 +40,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR" className="scroll-smooth">
+    <html lang="pt-BR" className="scroll-smooth overflow-x-hidden">
       <body
         className={`${hankenGrotesk.variable} ${ranadeVariable.variable} antialiased`}
       >
