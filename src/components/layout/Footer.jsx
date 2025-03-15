@@ -1,8 +1,78 @@
+'use client'
+
 import Card1 from '@/components/ui/Card1';
 
-// Import do logo como componente React
 import Image from 'next/image';
+
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from 'react';
+
+// Registrar o plugin ScrollTrigger
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 export default function Footer() {
+  const sectionRef = useRef(null);
+  const cardsRef = useRef(null); 
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    try {
+      // Definir estilos iniciais para todos os elementos que serão animados
+      if (cardsRef.current) { 
+        const cards = cardsRef.current.children;
+        gsap.set(cards, {
+          opacity: 0,
+          y: 30,
+          scale: 0.95
+        }); 
+      }
+    } catch (error) {
+      console.error("Erro ao configurar estilos iniciais:", error);
+    }
+  }, []);
+  
+  useEffect(() => {
+    if (typeof window === 'undefined' || !sectionRef.current) return;
+
+    try {
+      // Configurar as animações com ScrollTrigger
+      const tl = gsap.timeline({ 
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+          // markers: true,
+        }
+      });
+      
+      if (cardsRef.current) {
+        const cards = cardsRef.current.children;
+        tl.to(cards, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'back.out(1.2)'
+        });
+      }
+
+      // Limpar ScrollTriggers quando o componente for desmontado
+      return () => {
+        if (ScrollTrigger) {
+          ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        }
+      };
+    } catch (error) {
+      console.error("Erro ao configurar ScrollTrigger:", error);
+    }
+  }, []);
+
   const endereco = (
     <>
       Av. Gualtar, 848<br/>
@@ -12,9 +82,9 @@ export default function Footer() {
   );
 
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" ref={sectionRef}>
       <div className="container">
-        <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-10 gap-4 pb-24">
+        <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-10 gap-4 sm:pb-24 pb-16" ref={cardsRef}>
           <Card1
           iconSrc="/img/icons/icon-phone.svg"
           iconAlt="Telefone comercial"

@@ -47,6 +47,7 @@ module.exports = {
         'servico-fornos': "url('/img/lindal-fornos.webp')",
         'servico-refrigeracao': "url('/img/lindal-sistema-refrigeracao.webp')",
         'servico-chapeiras': "url('/img/lindal-chapeiras.webp')",
+        'cta': "url('/img/backgrounds/lindal-img-cta.webp')",
       }
     },
   },

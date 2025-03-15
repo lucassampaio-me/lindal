@@ -12,7 +12,7 @@ const Card1 = ({
 
     return (
         <div className={`flex flex-col items-start justify-between bg-cinza-1 ${className}`}>
-            <div className={`sm:p-8 p-6 border-b h-full border-cinza-2 ${contentTextClass}`}>
+            <div className={`w-full sm:p-8 p-6 border-b h-full border-cinza-2 ${contentTextClass}`}>
                 {title && (
                     <h3 className="font-display text-xl text-azul-marinho font-bold">{title}</h3>
                 )}

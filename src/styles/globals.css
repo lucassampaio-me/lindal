@@ -13,3 +13,13 @@
     @apply w-full max-w-[1440px];
   }
 }
+
+/* Estilos para a animação de transição de página */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.page-transition-exit {
+  animation: fadeOut 0.3s ease-in-out forwards;
+}

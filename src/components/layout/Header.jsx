@@ -3,7 +3,6 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
-import { gsap } from 'gsap';
 import Image from 'next/image';
 export default function Header() {
 
@@ -20,13 +19,6 @@ export default function Header() {
 
       const height = updateHeaderHeight();
       window.addEventListener('resize', updateHeaderHeight);
-      
-      // gsap.from(headerRef.current, { 
-      //   y: -height, 
-      //   opacity: 0, 
-      //   duration: 0.5, 
-      //   ease: "power2.out" 
-      // });
 
       return () => {
         window.removeEventListener('resize', updateHeaderHeight);
