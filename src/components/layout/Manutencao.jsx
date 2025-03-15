@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // Registrar o plugin ScrollTrigger
 if (typeof window !== 'undefined') {
@@ -30,6 +30,9 @@ export default function Manutencao(){
     const textRef = useRef(null);
     const buttonRef = useRef(null);
     const swiperNavRef = useRef(null); 
+    const [isBeginning, setIsBeginning] = useState(true);
+    const [isEnd, setIsEnd] = useState(false);
+    
     // Aplicar estilos iniciais assim que o componente for montado
     useEffect(() => {
       if (!sectionRef.current) return;
@@ -218,7 +221,11 @@ export default function Manutencao(){
                     </div>
 
                     <div className="w-auto flex gap-3 items-end sm:pl-10 pl-0 pb-10" ref={swiperNavRef}>
-                        <button onClick={handlePrev} className="p-4 bg-azul-ceu text-white inline-flex items-center">
+                        <button 
+                            onClick={handlePrev} 
+                            className={`p-4 bg-azul-ceu text-white inline-flex items-center transition-all duration-300 ${isBeginning ? 'disabled opacity-50 cursor-not-allowed' : ''}`}
+                            disabled={isBeginning}
+                        >
                             <Image 
                             src="/img/icons/icon-arrow-left.svg"
                             alt="Ícone Seta Esquerda"
@@ -228,7 +235,11 @@ export default function Manutencao(){
                             priority
                             />
                         </button>
-                        <button onClick={handleNext} className="p-4 bg-azul-ceu text-white inline-flex items-center">
+                        <button 
+                            onClick={handleNext} 
+                            className={`p-4 bg-azul-ceu text-white inline-flex items-center transition-all duration-300 ${isEnd ? 'disabled opacity-50 cursor-not-allowed' : ''}`}
+                            disabled={isEnd}
+                        >
                             <Image 
                             src="/img/icons/icon-arrow-right.svg"
                             alt="Ícone Seta Direita"
@@ -264,6 +275,14 @@ export default function Manutencao(){
                         slidesPerView: 3
                     }
                 }}
+                onSlideChange={(swiper) => {
+                    setIsBeginning(swiper.isBeginning);
+                    setIsEnd(swiper.isEnd);
+                }}
+                onInit={(swiper) => {
+                    setIsBeginning(swiper.isBeginning);
+                    setIsEnd(swiper.isEnd);
+                }}
                 >
                     <SwiperSlide>
                         <div className="p-3 bg-white min-h-[460px] flex items-end bg-servico-fogoes bg-cover bg-no-repeat">
@@ -289,7 +308,7 @@ export default function Manutencao(){
                     <SwiperSlide>
                         <div className="p-3 bg-white min-h-[460px] flex items-end bg-servico-refrigeracao bg-cover bg-center bg-no-repeat">
                             <div className="w-full bg-azul-ceu p-6">
-                                <h3 className="font-display text-lg font-medium text-white">Sistemas de refrigeração</h3>
+                                <h3 className="font-display text-lg font-medium text-white">Sistemas de exaustão</h3>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -303,7 +322,7 @@ export default function Manutencao(){
                     <SwiperSlide>
                         <div className="p-3 bg-white min-h-[460px] flex items-end bg-banner-hero bg-cover bg-center bg-no-repeat">
                             <div className="w-full bg-azul-ceu p-6">
-                                <h3 className="font-display text-lg font-medium text-white">Chapeiras</h3>
+                                <h3 className="font-display text-lg font-medium text-white">Outros equipamentos</h3>
                             </div>
                         </div>
                     </SwiperSlide>
