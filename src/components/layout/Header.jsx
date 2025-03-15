@@ -70,7 +70,7 @@ export default function Header() {
                 icon="/img/icons/icon-whatsapp.svg"
                 iconAlt="Ícone WhatsApp"
               >
-                WhatsApp
+                Fale conosco
               </Button>
             </div>
           </div>
