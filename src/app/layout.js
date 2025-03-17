@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: "Lindal - Manutenção e Fabricação de Equipamentos para Cozinha Industrial",
     description: "Com mais de 20 anos de experiência, a Lindal oferece serviços especializados de manutenção e fabricação de equipamentos para cozinhas industriais, garantindo qualidade, segurança e eficiência para restaurantes, supermercados e indústrias.",
-    url: "https://lindal.vercel.app",
+    url: "https://lindal.com.br",
     siteName: "Lindal ",
     locale: "pt_BR",
     type: "website",
