@@ -6,7 +6,9 @@ import { TransitionProvider } from '../context/TransitionContext';
 
 import { hankenGrotesk, ranadeVariable } from "./fonts";
 
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata = {
   title: "Lindal - Manutenção e Fabricação de Equipamentos para Cozinha Industrial",
@@ -41,6 +43,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" className="scroll-smooth overflow-x-hidden">
+      <GoogleTagManager gtmId="GTM-M6K3JRB9" />
       <body
         className={`${hankenGrotesk.variable} ${ranadeVariable.variable} antialiased`}
       >
@@ -53,6 +56,7 @@ export default function RootLayout({ children }) {
           <Footer />
         </TransitionProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
