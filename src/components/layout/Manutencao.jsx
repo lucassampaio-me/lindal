@@ -339,7 +339,6 @@ export default function Manutencao(){
                         target="_blank"
                         icon="/img/icons/icon-whatsapp.svg"
                         iconAlt="Ícone WhatsApp"
-                        onClick={() => sendGTMEvent({ event: 'btn_whatsapp'})}
                     >
                         Solicitar manutenção
                     </Button>

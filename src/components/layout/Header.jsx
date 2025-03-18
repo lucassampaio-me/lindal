@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
-import { sendGTMEvent } from '@next/third-parties/google';
+
 
 export default function Header() {
 
@@ -63,7 +63,6 @@ export default function Header() {
                 target="_blank"
                 icon="/img/icons/icon-whatsapp.svg"
                 iconAlt="Ícone WhatsApp"
-                onClick={() => sendGTMEvent({ event: 'btn_whatsapp'})}
               >
                 Fale conosco
               </Button>

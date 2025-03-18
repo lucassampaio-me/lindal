@@ -5,6 +5,7 @@ import Button from '@/components/ui/Button'; // Importa o novo componente Button
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
+import { sendGTMEvent } from '@next/third-parties/google';
 
 // Registrar o plugin ScrollTrigger
 if (typeof window !== 'undefined') {
