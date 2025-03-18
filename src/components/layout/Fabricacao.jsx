@@ -5,7 +5,7 @@ import Button from '@/components/ui/Button';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
-
+import { sendGTMEvent } from '@next/third-parties/google';
 // Registrar o plugin ScrollTrigger
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -154,6 +154,7 @@ export default function Fabricacao(){
                                 icon="/img/icons/icon-whatsapp-azul.svg"
                                 iconAlt="Ícone WhatsApp"
                                 variant = "secondary"
+                                onClick={() => sendGTMEvent({ event: 'btn_whatsapp'})}
                             >
                                 Solicitar orçamento
                             </Button>

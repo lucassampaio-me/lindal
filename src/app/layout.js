@@ -7,7 +7,6 @@ import { TransitionProvider } from '../context/TransitionContext';
 import { hankenGrotesk, ranadeVariable } from "./fonts";
 
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata = {
@@ -56,7 +55,6 @@ export default function RootLayout({ children }) {
           <Footer />
         </TransitionProvider>
         <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );

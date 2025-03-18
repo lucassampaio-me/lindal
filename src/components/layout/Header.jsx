@@ -4,6 +4,8 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
+import { sendGTMEvent } from '@next/third-parties/google';
+
 export default function Header() {
 
     const linkWpp = "https://wa.me/5511960829258?text=Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20Lindal";
@@ -61,6 +63,7 @@ export default function Header() {
                 target="_blank"
                 icon="/img/icons/icon-whatsapp.svg"
                 iconAlt="Ícone WhatsApp"
+                onClick={() => sendGTMEvent({ event: 'btn_whatsapp'})}
               >
                 Fale conosco
               </Button>

@@ -5,7 +5,7 @@ import Button from '@/components/ui/Button';
 import { gsap } from 'gsap';
 import { useEffect, useState, useRef } from 'react';
 import { useTransition } from '@/context/TransitionContext';
-
+import { sendGTMEvent } from '@next/third-parties/google';
 export default function Hero(){
   const linkWpp = "https://wa.me/5511960829258?text=Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20Lindal";
   const { transitionComplete } = useTransition();
@@ -123,6 +123,7 @@ export default function Hero(){
                   target="_blank"
                   icon="/img/icons/icon-whatsapp.svg"
                   iconAlt="Ícone WhatsApp"
+                  onClick={() => sendGTMEvent({ event: 'btn_whatsapp'})}
                 >
                   Fale conosco
                 </Button>

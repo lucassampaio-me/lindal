@@ -87,6 +87,7 @@ export default function CTA(){
                                 icon="/img/icons/icon-whatsapp-azul.svg"
                                 iconAlt="Ícone WhatsApp"
                                 variant = "secondary"
+                                onClick={() => sendGTMEvent({ event: 'btn_whatsapp'})}
                             >
                                 Chamar no WhatsApp
                             </Button>
