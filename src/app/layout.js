@@ -11,12 +11,12 @@ import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata = {
   title: "Lindal - Manutenção e Fabricação de Equipamentos para Cozinha Industrial",
-  description: "Com mais de 20 anos de experiência, a Lindal oferece serviços especializados de manutenção e fabricação de equipamentos para cozinhas industriais, garantindo qualidade, segurança e eficiência para restaurantes, supermercados e indústrias.",
+  description: "Com mais de 20 anos de experiência, a Lindal oferece serviços especializados de manutenção e fabricação de equipamentos para cozinhas industriais.",
   keywords: "cozinha industrial, equipamentos, manutenção, fabricação, Lindal",
   authors: [{ name: "Lindal" }],
   openGraph: {
     title: "Lindal - Manutenção e Fabricação de Equipamentos para Cozinha Industrial",
-    description: "Com mais de 20 anos de experiência, a Lindal oferece serviços especializados de manutenção e fabricação de equipamentos para cozinhas industriais, garantindo qualidade, segurança e eficiência para restaurantes, supermercados e indústrias.",
+    description: "Com mais de 20 anos de experiência, a Lindal oferece serviços especializados de manutenção e fabricação de equipamentos para cozinhas industriais.",
     url: "https://lindal.com.br",
     siteName: "Lindal ",
     locale: "pt_BR",
